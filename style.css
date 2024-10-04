@@ -1,0 +1,645 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200&display=swap');
+
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;;
+    color: #2416a0;
+}
+
+
+/* ################utility classes################ */
+.container{
+   max-width:1200px;
+   width:90%;
+    margin: auto;
+}
+
+.btn{
+    display: inline-block;
+    text-decoration: none;
+    padding:0.7em 1.7em;
+    border-radius: 50px;
+    cursor: pointer;
+    outline: none;
+    margin-top: 1em;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.btn-primary{
+    color: rgb(255, 255, 255);
+    background-color: #2416a0;
+}
+.btn-primary:hover{
+    background-color:wheat;
+    color:rgb(255, 0, 157);
+}
+
+.main-title{
+    font-size:30px;
+    text-transform: uppercase;
+    color:black;
+    /* background-color: rgba(0, 0, 0, 0.349); */
+    font-weight:600;
+}
+#showcase p{
+    font-size: 20px;
+    color: black;
+    font-weight: 500;
+}
+
+/* ########################navbar style##################### */
+        /* for destop mode */
+
+.navbar input[type='checkbox'],
+.navbar .hamburger-lines{
+    display: none;
+
+}
+
+.navbar{
+    box-shadow:0px 5px 10px 0px #aaa;
+    position: fixed;
+    width: 100%;
+    background-color: #ffff;
+    color: black;
+    opacity: 0.85;
+    z-index:999;
+}
+
+.navbar-container{
+    display: flex;
+    justify-content: space-between;
+    height: 64px;
+    align-items: center;
+}
+
+.menu-items{
+    order: 2;
+    display: flex;
+}
+
+.menu-items li{
+ list-style: none;
+ margin-left: 1.5rem;
+ font-size: 1.9rem;
+ text-transform: uppercase;
+}
+
+.logo{
+    order: 1;
+    text-transform: uppercase;
+    font-size: 2.3rem;
+    color: red;
+    font-weight:700;
+}
+
+.logo:hover{
+    color:darkorchid;
+    font-weight: bold;
+    transition: color 0.7s ease-in-out;
+}
+
+.navbar a{
+    color: rgb(68, 68, 68);
+    text-decoration: none;
+    font-weight:800;
+    transition:color 0.3s ease-in-out;
+}
+
+.navbar a:hover{
+    color:rgb(255, 0, 0);
+    font-weight: 600;
+}
+
+/* ###################showcase area############## */
+
+.showcase-area{
+    height:100vh;
+    background:linear-gradient(rgba(9, 188, 194, 0.144),rgba(13, 11, 150, 0.336)),
+    url(./picture/4.jpg);
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.showcase-container{
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction:column;
+height: 100%;
+font-size:1.6rem;
+}
+
+
+/* #########################about us################# */
+#about{
+    padding: 20px 0;
+    background-color: #16a0824d;
+}
+.about-wrapper{
+    display:flex;
+    flex-wrap: wrap;
+
+}
+.about-imag{
+ flex: 1 1 400px;
+ padding: 30px;
+ /* border: #16a083 solid 3px; */
+ transform: translatex(150%);
+ animation: about-imag-animation 3s ease-in-out forwards;
+}
+
+@keyframes about-imag-animation{
+    100%{
+        transform: translatex(0);
+    }
+}
+
+.about-text{
+    flex:1 1 400px;
+    padding: 30px;
+    margin: auto;
+    transform: translate(-150%);
+    animation: about-text-animation 3s ease-in-out forwards;
+}
+
+@keyframes about-text-animation{
+    100%{
+        transform: translatex(0);
+    }
+}
+
+.about-imag img{
+    display:block;
+   max-width:100%;
+    height:350px;
+    margin: auto;
+    object-fit: cover;
+    object-position:center;
+}
+
+#about .small{
+    font-size:20px;
+    text-transform: uppercase;
+    margin-bottom:9px;
+    font-weight: 600;
+    color: darkmagenta;
+
+}
+#about h2{
+    font-size: 20px;
+    margin-bottom:8px;
+}
+#about p{
+    font-size:15px;
+}
+
+/* #######################food category style############# */
+#food{
+    padding:5rem 0 10rem 0;
+    background-color: #16a0824d;
+}
+
+#food h3{
+    text-align: center;
+    text-transform: uppercase;
+    color:rgba(238, 224, 197, 0.89);
+    margin-bottom:5px;
+    font-size:3rem;
+    font-weight: 600;
+}
+#food .special{
+    color: red;
+    margin-bottom:30px;
+}
+
+.food-container{
+    justify-content: space-between;
+    display: flex;
+}
+.food-container img{
+    display: block;
+    width: 100%;
+    max-height: 400px;
+    margin: auto;
+    object-fit: cover;
+    object-position: center;
+}
+.image-container{
+    margin: 0 1rem;
+    position: relative;
+}
+.image-content{
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    opacity: 0;
+    z-index: 2;
+    text-align: center;
+    text-transform: uppercase;
+    transition: all 0.4s ease-in-out 0.2s;
+}
+.image-content h2{
+    font-size:3rem;
+    color: #ffff;
+}
+
+.image-content a{
+    font-weight: 1.5rem;
+
+}
+
+.image-container::after{
+    content:"";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.404);
+    /* opacity: 0; */
+    z-index: 1;
+   transform: scaley(0);
+   transform-origin: 100% 100%;
+   transition: all 0.4s ease-in-out;
+
+}
+.image-container:hover::after{
+ opacity: 1;
+ transform: scaley(1);
+}
+
+.image-container:hover .image-content{
+    opacity: 1;
+    top: 40%;
+}
+
+.image-content .btn-primary{
+    font-size:16px;
+}
+
+/* ######################food menu style######################## */
+#food-menu{
+    background-color: #16a0824d;
+}
+
+.food-menu-heading{
+    font-size:3rem;
+    text-align: center;
+    text-transform: uppercase;
+    color: rgb(228, 17, 17);
+    font-weight: 500;
+    padding-bottom:0px;
+   
+}
+.food-menu-container{
+    display:flex;
+    padding: 50px 0 30px 0;
+    flex-wrap: wrap;
+}
+
+.food-menu-container img{
+    display: block;
+    width:350px;
+    height: 350px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+
+}
+.food-menu-items{
+    display: flex;
+    /* one line me kiya ja sakta hai items ko if 620px liya jaye */
+    flex:1 1 600px;
+    justify-content: space-evenly;
+    margin-bottom:7rem;
+}
+.food-description{
+    margin: auto 2rem;
+    font-size:13px;
+}
+.food-description .food-price{
+    color: darkred;
+    font-weight: 700;
+}
+
+
+/* #############################tesimonial style################## */
+
+#testimonial{
+    padding: 5rem 0;
+    background-color: #16a0824d;
+}
+
+.testimonial-title{
+    font-size: 3rem;
+    font-weight: 400;
+    text-align: center;
+    color:black;
+}
+
+.testimonial-container{
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.6rem;
+    padding: 1rem;
+}
+
+.testimonial-box .checked{
+    color: red;
+}
+.testimonial-box .testimonial-text{
+    margin: 1rem 0;
+    color: #444;
+}
+.testimonial-box{
+    text-align: center;
+    padding: 1rem;
+}
+.customer-photo img{
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: auto;
+}
+
+/* #############################social media style################### */
+
+.footer{
+    background-color: #263238;
+    padding: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+    width:100%;
+}
+.social-media-link{
+    margin:3rem;
+    color:white;
+    
+}
+.media-text{
+    font-size:2.5rem;
+    text-transform:uppercase;
+    color: black;
+
+}
+.fa-facebook{
+    padding:1.5rem;
+} 
+
+/* .fa-instagram{
+    padding: 2rem;
+} */
+
+.fa-twitter-square{
+    padding:1.5rem;
+}
+
+/* .fa-whatsapp-square{
+    padding: 2rem;
+} */
+
+/* ###########################contact us style###################### */
+
+#contact{
+    padding: 5rem 0;
+    background-color: #16a0824d;
+}
+.contact-container{
+    display:flex;
+    background-color: #fff;
+}
+.contact-image{
+    width: 50%;
+}
+.contact-image img{
+    display: block;
+    object-fit: cover;
+    object-position:center;
+    height:500px;
+    width: 100%;
+}
+.form-container{
+    padding: 1rem;
+    width: 50%;
+    margin: auto;
+}
+.form-container input{
+    width: 100%;
+    display:block;
+    border: none;
+    border-bottom: solid rgba(68, 68, 68, 0.644) 2px;
+    padding: 1rem 0;
+    box-shadow: none;
+    outline: none;
+    color: rgb(68, 68, 68);
+    margin-bottom:2rem;
+    font-weight:800;
+    font-size: 2rem;
+}
+
+.form-container textarea{
+    font-size:2rem;
+    display:block;
+    border: none;
+    width: 100%;
+    border-bottom:2px solid #ddd;
+    padding: 1rem 0;
+    font-weight:600;
+}
+.form-container h2{
+    font-size:2.7rem;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 1rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+.form-container a{
+    font-size:1.7rem;
+    margin-left:5rem;
+}
+.form-container ::placeholder{
+   font-size:2rem;
+   font-weight:600;
+}
+.form-container h2:hover{
+    color:red;
+}
+
+/* ######################## media query ############## */
+@media (max-width:768px){
+    .navbar{
+        opacity: 0.95;
+    }
+    .navbar-container input[type="checkbox"],
+    .navbar-container .hamburger-lines{
+        display: block;
+    }
+    .navbar-container{
+        position: relative;
+        display: block;
+        height: 64px;
+    }
+    .navbar-container input[type="checkbox"]{
+        height: 32px;
+        display: block;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        width: 40px;
+        z-index:5;
+        opacity:0;
+    }
+    .navbar-container .hamburger-lines{
+        display: block;
+        height:32px;
+        width: 40px;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        display: flex;
+        z-index:2;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .navbar-container .hamburger-lines .line{
+        display: block;
+        width: 100%;
+        border-radius:10px;
+        height: 4px;
+        background-color: #333333;
+    }
+    .navbar-container .hamburger-lines .line-1{
+        transform: 0% 0%;
+        transition:transform 0.3s ease-in-out;
+    }
+
+    .navbar-container .hamburger-lines .line-2{
+        transition:transform 0.3s ease-in-out;
+    }
+
+    .navbar-container .hamburger-lines .line-3{
+        transform: 0% 100%;
+        transition:transform 0.3s ease-in-out;
+    }
+    .navbar .menu-items{
+        padding-top: 100px;
+        height: 100vh;
+        color:black;
+        background-color:white ;
+        max-width: 300px;
+        display:flex;
+        transform: translatex(-150%);
+        flex-direction: column;
+        margin-left: -40px;
+        padding-left: 50px;
+        transition: transfomr 0.5s ease-in-out;
+        box-shadow: 5px 0 10px 0px #aaa;
+    }
+    .navbar .menu-items li{
+        font-size: 2.5rem;
+        font-weight:600;
+        margin-bottom: 3rem;
+    }
+    .logo{
+        font-size: 3rem;
+        top: 10px;
+        right: 15px;
+        position: absolute;
+    }
+    .navbar-container input[type="checkbox"]:checked ~ .menu-items{
+       transform: translateX(0%);
+    }
+
+    .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line-1{
+        transform: rotate(45deg);
+    }
+
+    .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line-2{
+        transform:scaley(0);
+    }
+
+    .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line-3{
+        transform: rotate(-45deg);
+    }
+
+    /* ################# food container################ */
+
+    .food-container{
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .food-type:not(:last-child){
+        margin-bottom:3rem;
+    }
+    .food-type{
+        box-shadow: 5px 10px 5px 0px  #aaa;
+    }
+    .image-container{
+        margin:0;
+    }
+}
+
+/* ###################### small screen ############ */
+
+@media(max-width:500px){
+ html{
+    font-size: 50%;
+ }
+ .testimonial-container{
+    flex-direction: column;
+    text-align: center;
+ }
+
+ .food-menu-items{
+    flex-direction: column;
+    text-align: center;
+ }
+ .food-menu-container img{
+    margin: auto;
+ }
+
+ .form-container{
+    width: 90%;
+ }
+ .contact-container{
+    display: flex;
+    flex-direction: column;
+ }
+
+ .contact-image{
+    width: 90%;
+    margin: 3rem auto;
+ }
+}
+
+/* ########################### lansscape mode ######### */
+
+@media (orientation: landscape) and (max-height: 500px){
+    .showcase-area{
+        /* border: solid green 4px; */
+        height: 50vmax;
+    }
+}
+/* .body:hover{
+    background-color: rgba(0, 0, 0, 0.308);
+} */
